@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer call`s</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #acacac;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #181a1b;
+        }
+
+        input {
+            width: calc(100% - 10px);
+            background-color: #0000;
+            padding: 4px;
+            border: 1px solid;
+            border-radius: 4px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 320px;">
+        <h3 style="text-align: center; margin-bottom: 10px;" id="status">Offline</h3>
+        <p style="margin-bottom: 10px;">ID: <a id="peerId">none</a></p>
+        <p id="callBtn" style="display: none;margin-bottom: 10px;text-align: center;border: 1px solid;padding: 4px;border-radius: 4px;" >Voice Call</p>
+        <input style="margin-bottom: 10px;" id="connection" placeholder="Another client id" type="text">
+        <ul id="chat" style="list-style: none; max-height: 400px;overflow-y: auto;"></ul>
+        <input style="margin-top: 10px; visibility: collapse;" id="chatInput" placeholder="Enter mesage" type="text">
+    </div>
+    <video id="video" style="visibility: collapse;" autoplay playsinline></video>
+    <script src="./peerjs.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
