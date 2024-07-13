@@ -10,9 +10,10 @@ window.onload = async () => {
     connection = document.querySelector("#connection");
   
   const audio = await navigator.mediaDevices.getUserMedia({video: false, audio: true})
-
+  const response = await fetch("https://fulldroper.metered.live/api/v1/turn/credentials?apiKey=20b057434f2dba67cce42dbf43a66658ba5d");
+  const servers = await response.json()
   const peer = new Peer({ 
-    config: {'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] },
+    config: {'iceServers': servers },
     timeout: 120000
   });
 
